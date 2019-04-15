@@ -13,7 +13,6 @@ def call(String app = '', Map config = [:]) {
         url: "${config.gitlabUrl}/${config.application}.git",
       ]
     ]
-  ]
 }
 
 return this;
