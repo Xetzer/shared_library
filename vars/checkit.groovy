@@ -2,7 +2,7 @@
 def call(Map config = [:]) {
   checkout scm: [
     $class : 'GitSCM',
-    branches : [[name: "${config.branch}"]],
+    branches : [[name: "${config.branch}" ?: 'master']],
     doGenerateSubmoduleConfigurations: false,
     extensions: [
       [$class: 'LocalBranch', localBranch: "${config.branch}" ?: 'master'],
