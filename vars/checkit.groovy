@@ -1,9 +1,10 @@
-//String app = '', 
+//String app = '',
 def call(Map config = [:]) {
   checkout scm: [
     $class : 'GitSCM',
     branches : [[name: "${config.branch}"]],
     doGenerateSubmoduleConfigurations: false,
+    extensions: [
       [$class: 'LocalBranch', localBranch: "${config.branch}"],
       [$class: 'PruneStaleBranch'],
       [$class: 'CleanCheckout'],
@@ -13,6 +14,7 @@ def call(Map config = [:]) {
         url: "${config.gitlabUrl}/${config.application}.git",
       ]
     ]
+  ]
 }
 
 return this;
