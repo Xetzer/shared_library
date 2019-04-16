@@ -1,5 +1,5 @@
 //String app = '',
-def call(Map config = [:]) {
+def call(Map config = [:], String branch = '') {
   checkout scm: [
     $class : 'GitSCM',
     branches : [[name: config.branch ?: 'master']],
