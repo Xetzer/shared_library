@@ -5,7 +5,7 @@ def call(Map config = [:]) {
     branches : [[name: "${config.branch}"]],
     doGenerateSubmoduleConfigurations: false,
     extensions: [
-      [$class: 'LocalBranch', localBranch: "${config.branch}"],
+      [$class: 'LocalBranch', localBranch: "${config.branch ?: 'master'}"],
       [$class: 'PruneStaleBranch'],
       [$class: 'CleanCheckout'],
     ],
