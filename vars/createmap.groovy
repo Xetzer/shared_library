@@ -11,4 +11,4 @@ def call(String app = '') {
   value = config.app
 }
 
-return this;
+return value;
