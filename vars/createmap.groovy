@@ -9,6 +9,7 @@ Map config = [
 
 def call(String app = '') {
   value = config.app
+  println value
 }
 
-return value;
+return this;
