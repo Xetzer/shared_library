@@ -2,7 +2,7 @@ import groovy.transform.Field
 
 //Map config = [application: 'Ihar.Lahutka/nr-publication-directory-app', branch: 'integration-ES1.7', buildTool: 'gradle', runSonar: false, multiModule: false]
 def call(String app = '') {
-  return config.app 
+  return config.get(app) 
 }
 
 @Field
@@ -11,3 +11,4 @@ def config = [
         "nr-publication-directory-app" : [application: 'newsroom-apps/nr-publication-directory-app', runSonar: true, branch: 'integration-ES1.7', buildTool: 'gradle']
 ]
 
+return this;
