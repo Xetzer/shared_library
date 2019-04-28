@@ -1,8 +1,8 @@
 //String app = '',
-def call(Map config = [:], String snapshot = '', String deploy = 'false') {
+def call(Map config = [:], String snapshot = '', Boolean deploy = false) {
    //print application
    //def artifact_name = (snapshot == '') ? 'release' : 'snapshot'
-   def artifact_name = (deploy == 'true') ? 'deploy' : 'dont_deploy'
+   def artifact_name = (deploy == true) ? 'deploy' : 'dont_deploy'
    println artifact_name
    //return artifact_name
 }
